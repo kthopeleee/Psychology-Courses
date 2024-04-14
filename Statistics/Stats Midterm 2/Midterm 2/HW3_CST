@@ -1,0 +1,307 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{tabularx}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+
+\title{Homework 3 Computer Science Theory}
+\author{
+Katherine Lee
+\and khl2145 }
+\date{} % Empty value removes the date
+
+\begin{document}
+    \maketitle    
+    \section*{Chapter 8: Hypothesis Testing}
+    \subsection*{8.1 Hypothesis Testing}
+    Hypothesis testing is the statistical method that uses sample data to evaluate a hypothesis about a population \\
+    Four Steps of a Hypothesis Test \\
+\begin{itemize}
+  \item State hypothesis about population and select alpha level
+  \begin{itemize}
+  		\item NULL $H_0$ = $\mu_0 = \mu_1 $
+		\item Alternative $H_1$ = $\mu_0 \neq \mu_1 $
+		\item it might also have a direction (a one-tailed test) in this case you would use the operators $<,>$ 
+	\end{itemize}
+	\item Set the criteria for a decision: when we should refute a null hypothesis (find critical region)
+	  \begin{itemize}
+  		\item Alpha($\alpha$) level: aka level of significants for a hypothesis test
+		\item Critical region: extreme sample values that are very unlikely (defined by the alpha level) to test if the null is true
+	\end{itemize}
+  \item Collect data nd compute sample statistics (find test statistic z-score)
+  \begin{itemize}
+  	\item this includes z-score for sample: this measures the difference between the sample and population 
+	\end{itemize}
+
+	\item Make a decision about the null 
+	\begin{itemize}
+	\item you the z-score to determine you decision
+	\item the SD for sample determines the amount of error you expect between the sample mean and population mean, when you compare the result you get from the $\alpha$ z-score, then you can see if the z-score is greater or less than the given score
+	\item for example $\alpha = 1.96$ if z-score from sample = 2.40, then it will reject the null 
+	\end{itemize}
+	\end{itemize}
+\includegraphics[scale=.25]{critical region.png} \\
+z-score for sample mean $z = \frac{M-\mu}{\sigma_M}$ \\
+standard error between $M$ and $\mu$: $\sigma = \frac{\sigma}{\sqrt{n}}$
+    \subsection*{8.2 Errors} 
+    \subsubsection*{Type I errors}
+    occurs when a researcher rejects a null hypothesis that is actually true. In a typical research situation, a Type I error means the researcher concludes that there is evidence for a treatment effect when in fact the treatment has no effect
+    \begin{itemize}
+    	\item alpha level for a hypothesis test is the probabilty the test will lead to a Type I error, so by selecting a small alpha level, you are reducing the probability for a Type I error
+    \end{itemize}
+    \subsubsection*{Type II errors $\beta$}
+    A Type II error occurs when a researcher fails to reject a null hypothesis that is in fact false. In a typical research situation, a Type II error means that the hypothesis test has failed to detect a real treatment effect.
+    \begin{itemize}
+    	\item its difficult to determine a single exact probability for a type II error: sample size and effect size can be factors. 
+    \end{itemize}
+    	\includegraphics[scale=.25]{errordec.png}
+	    \subsubsection*{Selecting $\alpha$ level}
+	    The largest permissible value is $\alpha = 0.05$ or 1 in 20 probability  
+\subsubsection*{Type II errors $\beta$}
+A result is said to be significant or statistically significant if it is very unlikely to occur when the null hypothesis is true. That is, the result is sufficient to reject the null hypothesis. Thus, a treatment has a significant effect if the decision from the hypothesis test is to reject $H_0$.
+    \subsection*{8.3 Assumptions with Hypothesis Tests with z-scores} 
+Random Sampling It is assumed that the participants used in the study were selected randomly. Remember, we wish to generalize our findings from the sample to the popula- tion. Therefore, the sample must be representative of the population from which it has been drawn. Random sampling helps to ensure that it is representative. \\
+Independent Observations The values in the sample must consist of independent observations. In everyday terms, two observations are independent if there is no consis- tent, predictable relationship between the first observation and the second. More precisely, two events (or observations) are independent if the occurrence of the first event has no effect on the probability of the second event. S \\
+The Value of $\sigma$ Is Unchanged by the Treatment A critical part of the z-score formula in a hypothesis test is the standard error, sM. To compute the value for the standard error, we must know the sample size (n) and the population standard deviation (s). In a hypothesis test, however, the sample comes from an unknown population (see Figure 8.2). If the population is really unknown, it would suggest that we do not know the standard deviation and, therefore, we cannot calculate the standard error. To solve this dilemma, we have made an assumption. Specifically, we assume that the standard deviation for the unknown population (after treatment) is the same as it was for the population before treatment.
+Actually, this assumption is the consequence of a more general assumption that is part of many statistical procedures. This general assumption states that the effect of the treat- ment is to add a constant amount to (or subtract a constant amount from) every score in the population. You should recall that adding (or subtracting) a constant changes the mean but has no effect on the standard deviation. You also should note that this assumption is a theoretical ideal. In actual experiments, a treatment generally does not show a perfect and consistent additive effect. \\ \\
+Normal Sampling Distribution To evaluate hypotheses with z-scores, we have used the unit normal table to identify the critical region. This table can be used only if the distribution of sample means is normal.
+\subsection*{8.4 Directional (One-tailed) Hypothesis Tests} 
+In a directional hypothesis test, or a one-tailed test, the statistical hypotheses ($H_0$ and $H_1$) specify either an increase or a decrease in the population mean. That is, they make a statement about the direction of the effect. \\ \\
+Use Symbols such as $<, \leq, \geq, >$ for your alternative hypothesis \\
+\includegraphics[scale=.25]{1tailed1.png} \\ \\
+\subsection*{8.5 Measuring Effect Size}
+A measure of effect size is intended to provide a measurement of the absolute magnitude of a treatment effect, independent of the size of the sample(s) being used.
+\subsubsection*{Cohen's D}
+To Measure effect size we use Cohen's D, a smaller cohen's d = a smaller difference. Cohen's d measures stuff by standard devation. d = 1.00 = seffect of the treatment is equal to one standard deviation  \\
+\[ \text{Cohen's D} = \frac{M-\mu}{\sigma}\]	
+\begin{center}
+\includegraphics[scale=.25]{8.5effectsize.png}
+\end{center}
+Statistical significants tells us: whether the results observed in a study are likely to be real and not just due to random chance. 
+\begin{itemize}
+\item It helps researchers determine whether the findings of a study can be generalized to the broader population or if they are simply the result of sampling variability.
+\end{itemize}
+* note the size of smaple has no effect on cohen d
+\subsection*{8.6 Statistical Power}
+The power of a statistical test is the probability that the test will correctly reject a false null hypothesis. 
+\begin{itemize}
+\item power is the probability that the test will identify a treatment effect if one really exists.
+\end{itemize}
+\begin{center}
+\includegraphics[scale=.5]{8.6c.png}
+\end{center}
+\subsection*{How to calculate power?}
+1. Sketch distributions of null and alternative hypotheses \\
+2. Locate the critical region and compute $M_critical$
+\begin{itemize}
+\item use $\alpha = 0.05$, two-tailed test and look for the tail (C column) on your z-score
+\end{itemize}
+
+You find your z-score for the respective alpha score is looking at the unit normal and finding in C column where 0.05 percent chance \\
+Now we have to idenity proporition of altnerative hypothesis which is in the 0.05 chance 
+\[ M_{critical} = \mu_{null} + z(\sigma_M) \]
+3. Compute Z-score for alternative distribution and find power  \\
+\begin{itemize}
+\item Solve the $M_{critical}$ value it should be a sample mean 
+\item Then use that $M_{critical}$ and use it to calculate your z-score with the altenrate distrubtion
+\end{itemize}
+\[ z = \frac{M_{critical} - \mu_{alternative}}{\sigma_M} \]
+If we find the z-score being greater than 1.95 or less than -1.95 then we know that we can reject the hypothesis \\ \\
+The power refers to the c column in the z-score 
+\begin{center}
+\includegraphics[scale=.25]{8.6a.png}
+\end{center}
+\subsection*{Visual Notes}
+\begin{itemize}
+\item high power = higher chance to detect erro 
+\item effect size = small $\rightarrow$ statistical power = low
+\item power = low $\rightarrow$ LESS likely to detect an error 
+\item 1 = type1 + type2$\beta$
+\item increasing sample size increase both likelyhood of rejecting NULL hypothesis and power of test
+\item larger sample and larger alpha will increase power
+\end{itemize}
+\begin{center}
+\includegraphics[scale=.25]{8.6b.png}
+\end{center}
+\newpage
+
+
+\section*{Chapter 9: Intro to the T-statistic}
+Z-score cons: It requires population standard deviation to compute standard error $\sigma$ and in most situations we do not know the $\sigma$ for population
+\subsection*{Chapter 9: Intro to the T-statistic}
+We can find the estimated standard error when we do not have a standard error known 
+\subsubsection*{calculating T statistic}
+\[ \text{estimated standard error} = s_m = \frac{s}{\sqrt{n}} \]
+\[ \text{estimated standard error} = s_m = \sqrt{\frac{s^2}{n}} \]
+\[ \text{sample variance} = s^2 = \frac{SS}{n-1} = \frac{SS}{df}  \]
+\[ \text{sample standard deviation} = s = \sqrt{\frac{SS}{n-1}} = \sqrt{\frac{SS}{df}} \]
+Estimated standard error $s_M$ is the estimate of actual standard error $\sigma_M$ when $\sigma_M$ is unknown. It is found by the sample variance or deviation and gives the standard distance between sample mean M and population mean $\mu$
+\[ \text{t statistic} = t = \frac{M-\mu}{s_M} \]
+The t statistic tests a hypotheses about an unknown population mean, $\mu$, when $\sigma$ is unknown. The formula for the t statistic = z-score formula, but that the t-statistic uses the estimated standard error $s_M$.
+\[ \text{degrees of freedom} = df = n-1 \]
+Degrees of freedom is the number of scores ina. sampel that are independent and free.  \\
+\subsubsection*{t-distribution}
+\begin{itemize}
+\item if the sample size is n = 30, then it will be nearly equal to the normal distribution, but if n = 5, then it will start to look less and less like the curve of the normal distrubtion
+\item the shape of the distribution is dependent to the $df = n-1$
+\end{itemize}
+\begin{center}
+\includegraphics[scale=.50]{9.1a.png}
+\end{center}
+
+\begin{itemize}
+\item t statistics are more variable than z-scores
+\item t distributions are more flatter and more spread out
+\item as sample size and df increase, and variability in t-distribution decreases, it will look more like a normal distribution
+\end{itemize}
+\subsubsection*{Probabilities of t dstributions}
+\begin{center}
+\includegraphics[scale=.5]{9.1b.png}
+\end{center}
+The orange color 0.05 directional t-value \\
+\begin{itemize}
+\item expect t statistic when null hypothesis is true = 0 
+\end{itemize}
+
+\subsection*{9.2 Hypothesis Tests with the t Statistic}
+\subsubsection*{Using the t Statistic for Hypothesis Testing}
+\begin{itemize}
+\item the t test does not require any prior knowledge about the population mean or the population variance.
+\item All you need to compute a t statistic is a null hypothesis and a sample from the unknown population
+\end{itemize}
+\subsubsection*{Hypothesis Testing Example SEE PG 300}
+\subsubsection*{Assumptions of a T test}
+\begin{itemize}
+\item The values in the sample must consist of independent observations.
+\begin{itemize}
+\item these two observations much be indepentent (the reslationship between the two events
+\end{itemize}
+\item The population sampled must be normal.
+\end{itemize}
+\subsubsection*{ The Influence of Sample Size and Sample Variance}
+\begin{itemize}
+\item larger variance = larger error = more likely $H_0$ is true
+\item large variance is bad for inferential statistics 
+\item larger sample is smaller the error 
+\end{itemize}
+
+
+\subsection*{9.3 Hypothesis Tests with the t Statistic}
+\subsubsection*{Estimated Cohen's d}
+\[ \text{Cohen's d} = \frac{\mu_{treatment}-\mu_{no \ treatment}}{\sigma}\]
+\[ \text{Estimated d} = \frac{M-\mu}{s}\]
+\subsubsection*{Measuring Percent Variance $r^2$}
+Another way to measure effect size is to determine the varaibitly in teh scores is explained in the treatment effect. \\
+We do this by adjusting the scores to by deviations to make it more visually appealing and understandable
+\begin{center}
+\includegraphics[scale=.40]{9.3a.png}
+\end{center}
+\[r^2 = \frac{\text{variability accounted for by the treatment effect}}{\text{total variabiilty}}\]
+Using the t statistic 
+\[ r^2 = \frac{t^2}{t^2+df}\]
+\begin{center}
+\includegraphics[scale=.50]{9.3b.png}
+\end{center}
+\subsubsection*{Confidence Intervals for Estimating $\mu$}
+A confidence interval is an interval, or range of values centered around a sample statistic. The logic behind a confidence interval is that a sample statistic, such as a sample mean, should be relatively near to the corresponding population parameter. Therefore, we can confidently estimate that the value of the parameter should be located in the interval near to the statistic.
+\[ \mu = M \pm t(s_M)\]
+\begin{itemize}
+\item Calculates upper and lower bound by the plus or minus
+\item M = sample mean
+\item t = t-static calulated by $t = \frac{M -\mu}{s_M}$
+\item $s_M$ = estimated standard error $s_M = \frac{s}{\sqrt{n}}$ or $s_M = \sqrt{\frac{s^2}{n}}$
+\end{itemize}
+Also to find confidence inteval if a question asks 90 percent confidence you look at the t-distribution. examine the row (df) and the columns = percent confident (look for 10 in combined tails)
+\subsubsection*{Directional Hypotheses and One-Tailed Tests}
+With directional tests, you use these symbols to showcase direction $\geq, >, \leq, <$
+\begin{itemize}
+\item For $H_0$ use $\leq, \geq$
+\item For $H_1$ use $<, >$
+\end{itemize}
+Locate the critical region, keep in mind it will only be on one side 
+
+\newpage
+ \section*{Chapter 10: Independent-Measures Design}
+\subsection*{10.1 Indepentent Test}
+Independent test: A research design that uses a separate group of participants for each treatment condition (or for each population) \\
+COMPARING 2 GROUPS, these two groups could be 2 different topics or repeating on same sample group but slightly different (perhaps A study comparing blood pressure before and after a workout.)
+ \begin{center}
+\includegraphics[scale=.50]{10a.png}
+\end{center}
+\subsection*{10.2 The Hypotheses and the Independent-Measures t Statistic}
+The null is when there is no difference between the two population means
+\[ H_0: \mu_1 - \mu_2 = 0 \]
+\[ H_1: \mu_1 - \mu_2 \neq 0 \]
+Lets use two tests so it follows similar to independent- measures t \\
+\[ t = \frac{(M_1-M_2)-(\mu_1 - \mu_2)}{s_{M_1 - M_2}}\]
+Numerator is the mean difference and teh denominator is the difference that is expected \\
+\subsubsection*{Interpreting estimated standard error}
+To estimate the standard error of $M_1 - M_2$ 
+\begin{itemize}
+\item measures the standard distance between $(M_1 - M_2)$ and $(\mu_1 - \mu_2)$
+\item when teh null is true that measure the standard of average size of the difference between the means 
+\end{itemize}
+\subsubsection*{Calculating the estimated standard error}
+\[ S_{M_1 - M_2} = \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\]
+Tihis combines the errors for the first and second sample mean. \\
+This represnts pooled variance only when $n_1 = n_2$ \\
+recall
+\[ s^2 = \frac{SS}{df}\]
+When there are two SS values and two df values then we should cominte to create a pooled varaince 
+\[ \text{pooled variance} = s^2_p = \frac{SS_1 + SS_2}{df_1 + df_2}\]
+This is the average of the two sample variances, you would like to know the pooled variance to calculate the estimated standard error (the pool)
+\[\text{estimated standard error of } M_1 - M_2 = s_{(M_1-M_2)} = \sqrt{\frac{s_p^2}{n_1}+\frac{s_p^2}{n_2}}\]
+Now to find hte t statistic
+\[t = \frac{(M_1-M_2)-(\mu_1 - \mu_2)}{s_{(M_1-M_2)}}\]
+\[ df = df_1 + df_2 = (n_1 -1)+(n_2 -1)\]
+\begin{center}
+\includegraphics[scale=.50]{10b.png}
+\end{center}
+\subsection*{10.3 Hypothesis Tests with the Independent-Measures t Statistic}
+Three assumptions before you use indepnet measure t formula
+\begin{itemize}
+\item The observations within each sample must be independen
+\item The two populations from which the samples are selected must be normal.
+\item  The two populations from which the samples ares elected must have equal variances.
+\end{itemize}
+\subsection*{10.4 Effect Size and Confidence Intervals for the Independent-Measures t}
+Estimated cohen's d which is the standard measure of mean differnce. It caluculates the difference between the two sample means to estimate the mean diffference
+\[ \text{estimated d} = \frac{M_1 - M_2}{\sqrt{s^2_p}}\]
+To find the variance and $r^2$ this measures effect size by computing the percentage variance for $r^2$
+\[ r^2 = \frac{t^2}{t^2 + df}\]
+To calculate confidence intervals then we see the difference
+\[ \mu_2\]
+\subsection*{10.5 The Role of Sample Variance and Sample Size in the Independent-Measures t Test}
+
+ \newpage
+\begin{itemize}
+\item I
+\end{itemize}
+
+
+
+\begin{center}
+\includegraphics[scale=.50]{9.1b.png}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+%\begin{center}
+%\includegraphics[scale=.25]{8.5effectsize.png}
+%\end{center}
+
+\end{document}

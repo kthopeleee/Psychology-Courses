@@ -1,0 +1,201 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\usepackage{multicol} % Include the package for multicolumn layout
+
+\graphicspath{ {./images/} }
+
+
+\title{Stats Retake Review}
+\author{
+Katherine Lee
+\and khl2145 }
+\date{} % Empty value removes the date
+
+\begin{document}
+    \maketitle    
+    
+    \subsection*{Variables in each Test}
+    
+    \textbf{Variables you have in a one sample z-test}
+    \begin{itemize} 
+    	\item $M$, sample mean
+    	\item $\mu$, population mean
+		\item $n$, sample size 
+		\item $\sigma$, population SD
+	\end{itemize}
+    \textbf{Variables you have in a one sample t-test}
+    \begin{itemize}
+    	\item $M$, sample mean
+		\item $\mu$, population mean
+		\item $n$, sample size
+		\item $s$ you do not have population SD but you have sample SD
+	\end{itemize}
+    \textbf{Variables you have in an independent sample t-test}
+    \begin{itemize}
+    	\item $M_1, M_2 $ sample mean 1, sample mean 2 
+		\item $n_1, n_2$ sample size 1 and 2
+		\item $s_1,s_2$ SD for sample  1 and 2, or pooled variance
+	\end{itemize}
+    \textbf{Variables you have in a one sample repeated test}
+    \begin{itemize}
+    	\item $M_D, X_2-X_1$ the mean change (sample 1 - sample 2) scores
+		\item $s$ standard deviation or $s_{M_{D}}$, estimated standard error of the mean difference 
+		\item $n$ sample size, recall repeated test means the same pop size, calculate df,  The degrees of freedom (df) for the test would be $n-1$ because its the same population size
+	\end{itemize}
+    \subsection*{Assumptions for each Test}
+    %% 
+    \textbf{Assumptions for a one sample z-test and t-test} 
+    \begin{itemize}
+    	\item Population Distribution is Normal or ($n > 30$), the Central Limit Theorem
+		\item random sampling
+		\item Samples are independent of eachother (independent sampling)
+		\item The Value of $\sigma$ Is Unchanged by the Treatment (only for z-test)
+	\end{itemize}
+	%%
+    \textbf{Assumptions for independent t-test}
+    \begin{itemize}	
+		\item Population Distribution is Normal or ($n > 30$), the Central Limit Theorem
+		\item random sampling
+		\item Homogeneity of Variances: The variances in the two groups being compared are assumed to be equal.
+		\item Independence of Observations: Each group consists of different subjects, and there is no relationship between the subjects in one group and the subjects in the other.
+	\end{itemize}
+	%%
+    \textbf{Assumptions for one sample repeated test} 
+    \begin{itemize}
+    	\item normal distribution
+		\item effects statistically significant but not practically significant
+		\item They are the same people so not independent
+	\end{itemize}
+	\subsection*{Differences between Repeated Measuresvs independent T}
+	\textbf{Number of Subjects} Repeated uses subjects more efficiently because you are useing the same people \\
+	%
+	\textbf{Study Changes overtime} Repeated is good at seeing development or changes that take place overtime \\
+	%
+	\textbf{Individual Differences} Repeated eliminates problems caused by individual differences (characteristics that vary from person to person) and can impact outcome of hypothesis test.
+	\begin{itemize} 
+		\item this can be a problem for independent t-tests because there are different variables then in tests that could impact results 
+		\item An important
+advantage of the repeated-measures design is that it
+removes or reduces individual differences, which in
+turn lowers sample variability and tends to increase
+the chances for obtaining a significant result.
+	\end{itemize}
+	%
+	\textbf{Power} Repeated tends to have more power, power = likelyhood to detect real treatment effect. You are comparing just 1 sample rather than 2 samples
+	%
+	\subsection*{Disadvantages of Repeated Tests}
+	\textbf{time-related factors}
+	\begin{itemize}
+		\item Carryover Effects: Participants may perform better in later conditions simply because they have had more practice or familiarity with the test, not because of any treatment effect, tests that have permanent change is not good for repeated tests because if this condition
+		\item Fatigue Effects: Participants may perform worse in later conditions due to tiredness or boredom, which can confound the results.
+	\end{itemize}
+	\textbf{Counter balancing} Solution to deal with time related and order effects: Participants are randomly divided into 2 groups one getting treatment 1 and then treatment 2, other treatment 2 and then treatment 1. 
+	\textbf{matched subject desgin} , each individual in one sample is matched with an individual in the other sample. The matching is done so that the two individuals are equivalent (or nearly equivalent) with respect to a specific variable (or variables) that the researcher would like to control. (needs 2 separate samples) so that you can have a 1 to 1. example would be 2 samples and you match particpants based on IQ 
+	\subsection*{Type 1 vs Type 2 Errors}
+	\textbf{Type 1}: Assuming the NULL is true, you reject the null and say the treatment works but it doesn't
+	\begin{itemize}
+		\item You can find type 1 error based on the $\alpha$, a smaller $\alpha$ is a smaller chance of a type 1 error
+		\item the probability of a Type I error is ie if $\alpha = 0.05$ then there is a $5\%$ of samples have means in teh critical region in the null (when there is no treatment effect, still only 5 percent will have data in the critical region)
+		\item This is worse than a type 2
+	\end{itemize}
+	\textbf{Type 2}: Assuming the NULL is true, you fail to reject the null and say the treatment doesnt work but it actually does
+	\begin{itemize}
+		\item The risk of a type 2 error is denoted by this: $p = 1 - \beta$ 
+		\item consider that p is the p found from your test statistic
+	\end{itemize}
+	\textbf{Confidence Intervals}: A confidence interval consists of an interval of values around a sample mean, and we can be reasonably confident that the unknown population mean is located somewhere in the interval
+	\begin{itemize}
+		\item If we obtain a sample mean of M = 86, we can be reasonably confident that the population mean is around 86.
+	\end{itemize}    
+	\textbf{Criticism of Null Hypothesis Significance}:  
+	\begin{itemize}
+		\item Can be swayed by sample size, if the effect isn't large, but there is a difference you can pump the sample size to prove it the difference is significant. (doesnt mean  substantially large treatment effect (it doesnt tell the size of the treatment effect)
+		\item Binary Decisions: The use of arbitrary thresholdsfor determining "statistical significance" leads to binary decision-making, which can oversimplify complex data into "significant" or "not significant" without considering the magnitude or practical importance of the effect.
+		\item NHST focuses on whether an effect exists rather than the size of the effect. An effect might be statistically significant but practically insignificant, especially in large samples where small differences can become statistically significant.
+	\end{itemize}
+	\textbf{Measuring Effect Size}:The goal is to measure and describe the absolute size of the treatment effect in a way that is not influenced by the number of scores in the sample.
+	\begin{itemize}
+		\item d = 0.2 small effect, d = 0.5 medium effect, d = 0.8 large effect
+	\end{itemize}
+	This is for $r^2$  (proportion variance) this is different from cohen's d because it adds sample size, high variances reduces the likelyhood of rejecting the null and reduces measures of effect size \\
+\textbf{Proportion of variance $r^2$}
+This measures the proportion of variance in the dependent variable that can be explained by the independent variable 
+	\begin{itemize}
+		\item $r^2$ = 0.01 small effect, $r^2$ = 0.09 medium effect, $r^2$ = 0.25 large effect
+	\end{itemize}
+	\textbf{p-value}: The probability of observing data at least as extreme as the data actually observed, assuming that the null hypothesis is true
+	\subsection*{How to Calculate T-statistic} 
+	\begin{enumerate}
+		\item state hypothesis, select alpha level $\alpha = 0.05$ 
+		\begin{itemize}
+			\item $H_0: \mu \leq 50$ for one directional or $H_0: \mu = 50$ bidirectional
+			\item $H_1: \mu < 50$ for one directional or $H_1: \mu \neq 50$
+		\end{itemize}
+		\item Locate Critical Region, find df from n and the $\alpha$ to find the critical value on the t-distribution table
+		\begin{itemize}
+			\item find the t critical value through df and alpha
+			\item anything greater than the t will reject
+		\end{itemize}
+		\item Calculate the test statistic through the equation 
+		\item make a decision if the test statistic is in the critical region (greater than the t then we reject
+		\item find confidence interval: The 95$\%$ confidence interval for the population mean difference
+	\end{enumerate}
+	\subsection*{Independent T-Test}
+	Cohen's Estimated d: difference between the two sample means 
+
+Population parameter null hypothesis is always 0 \\
+one-sample t-test = does not have to be 0 because you can do directional t-test
+
+\section*{Confidence Interval (CI)}
+
+A confidence interval (CI) is a range of values, derived from the sample data, that is believed to cover the true population parameter (e.g., mean, difference between means) with a certain level of confidence, typically expressed as a percentage (e.g., 95\% confidence interval). It provides an estimated range of values which is likely to include the population parameter based on the sample data. The width of the confidence interval gives us an idea about the uncertainty associated with this estimate. Narrower intervals indicate more precise estimates.
+
+\subsection*{Confidence Interval in Different T-tests}
+
+\subsubsection*{One Sample T-test}
+\textbf{Purpose:} To estimate the mean of a single population.
+
+\textbf{CI Interpretation:} In a one-sample t-test, the confidence interval provides a range that is likely to contain the true population mean. For example, a 95\% CI for a sample mean of 100 with a range from 95 to 105 suggests that we are 95\% confident the true population mean lies between 95 and 105.
+
+\subsubsection*{Independent T-test}
+\textbf{Purpose:} To estimate the difference between the means of two independent populations.
+
+\textbf{CI Interpretation:} For an independent t-test, the confidence interval estimates the range within which the difference between the two population means is likely to lie. If you have a 95\% CI for the difference between two group means that ranges from 2 to 10, it means you are 95\% confident that the true difference in means of the populations from which your samples were drawn falls between 2 and 10. If the confidence interval does not include 0, it suggests a statistically significant difference between the groups at the 5\% level.
+
+\subsubsection*{Repeated Measures T-test (Paired Sample T-test)}
+\textbf{Purpose:} To estimate the mean difference between paired observations (e.g., before and after measurements on the same subjects).
+
+\textbf{CI Interpretation:} In a repeated measures t-test, the confidence interval provides a range likely to contain the true mean difference between the paired observations. For example, a 95\% CI for the mean difference that ranges from -1.5 to -0.5 indicates that we are 95\% confident the true average difference between the paired observations in the population falls between -1.5 and -0.5. If this interval does not include 0, it indicates a significant mean difference between the paired observations.
+
+
+
+	%\textbf{
+	\begin{itemize}
+		\item 
+	\end{itemize}
+
+
+
+
+    \subsection*{Notation} 
+    \textbf{Formal Notation}
+    \[ t(df) = \text{t-statistic}, p < 0.05, r^2 = 0.47 \]
+	\begin{itemize}
+		\item $r^2$ = variance 
+		\item p = if its less than the p value or calculate what its equal to
+		\item find hte test statistic
+	\end{itemize}
+    
+    
+% \includegraphics[scale=.5]{HW3b.png} \\
+
+\end{document}
